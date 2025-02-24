@@ -1,130 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <link rel="stylesheet" href="styles.css">
- <style>
-    * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instagram Profile Page</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+<style>
+ /* Styling for the Profile Page */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #fafafa;
 }
 
-.login-container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    text-align: center;
+/* Profile card styling */
+.profile-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: white;
 }
 
-h2 {
-    margin-bottom: 20px;
-    color: #333;
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
-.input-container {
-    margin-bottom: 15px;
-    text-align: left;
+.username {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 10px;
 }
 
-label {
-    display: block;
-    margin-bottom: 5px;
-    color: #555;
+.bio {
+  font-size: 14px;
+  color: #888;
 }
 
-input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.stats p {
+  font-size: 14px;
+  color: #555;
 }
 
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
+.stats .row {
+  margin-top: 15px;
 }
 
-button:hover {
-    background-color: #45a049;
+.post img {
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
-.error-message {
-    color: red;
-    font-size: 14px;
-    margin-top: 10px;
-    visibility: hidden;
-}
-
- </style>   
+   
+</style>  
 </head>
 <body>
-    <div class="login-container">
-        <h2>Login</h2>
-        <form id="loginForm" onsubmit="return validateForm()">
-            <div class="input-container">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+  <!-- Profile Page Container -->
+  <div class="container mt-5">
+    <div class="row">
+      <!-- Profile Sidebar -->
+      <div class="col-md-3">
+        <div class="profile-card text-center">
+          <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-img mb-3">
+          <h3 class="username">JohnDoe</h3>
+          <p class="bio">Photographer | Traveler | Love nature</p>
+          <div class="stats">
+            <div class="row">
+              <div class="col-4">
+                <p><strong>120</strong><br>Posts</p>
+              </div>
+              <div class="col-4">
+                <p><strong>500</strong><br>Followers</p>
+              </div>
+              <div class="col-4">
+                <p><strong>180</strong><br>Following</p>
+              </div>
             </div>
-            <div class="input-container">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+          </div>
+          <button class="btn btn-primary mt-3" id="followButton">Follow</button>
+        </div>
+      </div>
+
+      <!-- Posts Section -->
+      <div class="col-md-9">
+        <div class="row">
+          <!-- Post 1 -->
+          <div class="col-4 mb-4">
+            <div class="post">
+              <img src="https://via.placeholder.com/400" alt="Post 1" class="img-fluid">
             </div>
-            <button type="submit" class="login-btn">Login</button>
-            <p class="error-message" id="error-message"></p>
-        </form>
+          </div>
+          <!-- Post 2 -->
+          <div class="col-4 mb-4">
+            <div class="post">
+              <img src="https://via.placeholder.com/400" alt="Post 2" class="img-fluid">
+            </div>
+          </div>
+          <!-- Post 3 -->
+          <div class="col-4 mb-4">
+            <div class="post">
+              <img src="https://via.placeholder.com/400" alt="Post 3" class="img-fluid">
+            </div>
+          </div>
+          <!-- Post 4 -->
+          <div class="col-4 mb-4">
+            <div class="post">
+              <img src="https://via.placeholder.com/400" alt="Post 4" class="img-fluid">
+            </div>
+          </div>
+          <!-- Post 5 -->
+          <div class="col-4 mb-4">
+            <div class="post">
+              <img src="https://via.placeholder.com/400" alt="Post 5" class="img-fluid">
+            </div>
+          </div>
+          <!-- Post 6 -->
+          <div class="col-4 mb-4">
+            <div class="post">
+              <img src="https://via.placeholder.com/400" alt="Post 6" class="img-fluid">
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <script src="script.js"></script>
+  <!-- Bootstrap JS and Custom JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+    // Functionality for the follow button
+document.getElementById('followButton').addEventListener('click', function() {
+  let button = this;
+  if (button.innerHTML === 'Follow') {
+    button.innerHTML = 'Following';
+    button.classList.remove('btn-primary');
+    button.classList.add('btn-secondary');
+  } else {
+    button.innerHTML = 'Follow';
+    button.classList.remove('btn-secondary');
+    button.classList.add('btn-primary');
+  }
+});
+
+  </script>
 </body>
-<script>
-    function validateForm() {
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-    const errorMessage = document.getElementById("error-message");
-
-    // Simple validation for email and password
-    if (!email || !password) {
-        errorMessage.textContent = "Both fields are required!";
-        errorMessage.style.visibility = "visible";
-        return false;
-    }
-
-    if (!validateEmail(email)) {
-        errorMessage.textContent = "Please enter a valid email address.";
-        errorMessage.style.visibility = "visible";
-        return false;
-    }
-
-    // Hide error message if everything is fine
-    errorMessage.style.visibility = "hidden";
-    return true; // Allow form submission
-}
-
-function validateEmail(email) {
-    // Regular expression for basic email validation
-    const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-    return regex.test(email);
-}
-
-</script>
 </html>
